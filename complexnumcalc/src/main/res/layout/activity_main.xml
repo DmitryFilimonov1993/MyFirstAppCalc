@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bcground">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_marginLeft="5pt"
+        android:layout_marginRight="5pt"
+        android:layout_marginTop="15pt">
+
+        <EditText
+            android:id="@+id/numRe1"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5pt"
+            android:layout_marginRight="5pt"
+            android:layout_weight="1"
+            android:hint="first real number"
+            android:textStyle="italic"
+            android:inputType="numberSigned|numberDecimal"></EditText>
+
+        <EditText
+            android:id="@+id/numIm1"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5pt"
+            android:layout_marginRight="10pt"
+            android:layout_weight="1"
+            android:hint="first imaginary"
+            android:textStyle="italic"
+            android:inputType="numberSigned|numberDecimal"></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2"
+        android:layout_marginLeft="5pt"
+        android:layout_marginRight="5pt"
+        android:layout_marginTop="3pt">
+
+        <EditText
+            android:id="@+id/numRe2"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5pt"
+            android:layout_marginRight="5pt"
+            android:layout_weight="1"
+            android:hint="second real number"
+            android:textStyle="italic"
+            android:inputType="numberSigned|numberDecimal"></EditText>
+
+        <EditText
+            android:id="@+id/numIm2"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5pt"
+            android:layout_marginRight="10pt"
+            android:layout_weight="1"
+            android:hint="second imaginary"
+            android:textStyle="italic"
+            android:inputType="numberSigned|numberDecimal"></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3"
+        android:layout_marginTop="50pt"
+        android:layout_marginLeft="5pt"
+        android:layout_marginRight="5pt">
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="+"
+            android:textSize="14pt"
+            android:background="@drawable/button_primary_selector"
+            android:id="@+id/btnPlus">
+        </Button>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="-"
+            android:textSize="14pt"
+            android:background="@drawable/button_primary_selector"
+            android:id="@+id/btnMinus">
+        </Button>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="×"
+            android:textSize="14pt"
+            android:background="@drawable/button_primary_selector"
+            android:id="@+id/btnMult">
+        </Button>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="÷"
+            android:textSize="14pt"
+            android:background="@drawable/button_primary_selector"
+            android:id="@+id/btnDiv">
+        </Button>
+    </LinearLayout>
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="5pt"
+        android:layout_marginRight="5pt"
+        android:textSize="14pt"
+        android:textStyle="italic"
+        android:layout_marginTop="15pt"
+        android:id="@+id/textResult"
+        android:gravity="center_horizontal">
+    </TextView>
+</LinearLayout>
