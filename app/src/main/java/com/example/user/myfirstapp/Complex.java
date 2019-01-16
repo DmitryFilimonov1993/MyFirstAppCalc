@@ -1,4 +1,4 @@
-package com.example.complexnumcalc;
+package com.example.user.myfirstapp;
 
 import java.math.BigDecimal;
 
