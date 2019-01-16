@@ -9,10 +9,10 @@ import android.widget.*;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    EditText inNumberFirstRe, inNumberSecondRe, inNumberFirstIm, inNumberSecondIm;
-    Button buttonPlus, buttonMinus, buttonMult, buttonDiv;
-    TextView textResult;
-    String sign = "";
+    private EditText inputNumberFirstReal,
+            inNumberSecondRe,
+            inNumberFirstIm,
+            inNumberSecondIm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,34 +20,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         //Creating menu
-
-        inNumberFirstRe = (EditText) findViewById(R.id.numRe1);
-        inNumberFirstIm = (EditText) findViewById(R.id.numIm1);
+        inputNumberFirstReal = (EditText) findViewById(R.id.first_real_number_edit_text);
+        inNumberFirstIm = (EditText) findViewById(R.id.second_real_number_edit_text);
         inNumberSecondRe = (EditText) findViewById(R.id.numRe2);
         inNumberSecondIm = (EditText) findViewById(R.id.numIm2);
 
-
-        buttonPlus = (Button) findViewById(R.id.btnPlus);
-        buttonMinus = (Button) findViewById(R.id.btnMinus);
-        buttonMult = (Button) findViewById(R.id.btnMult);
-        buttonDiv = (Button) findViewById(R.id.btnDiv);
-
-        textResult = (TextView) findViewById(R.id.textResult);
-
-        buttonPlus.setOnClickListener(this);
-        buttonMinus.setOnClickListener(this);
-        buttonMult.setOnClickListener(this);
-        buttonDiv.setOnClickListener(this);
-
+        ((Button) findViewById(R.id.btnPlus)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnMinus)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnMult)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnDiv)).setOnClickListener(this);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
 
+        //TODO stings to resources
         menu.add(0, 1, 0, "Algebraic notation");
         menu.add(0, 2, 0, "Exponential notation");
         menu.add(0, 3, 0, "Converter");
         menu.add(0, 4, 0, "Quit");
-
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -79,50 +69,64 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void onClick(View view) {
 
-        double numberFirstRe = 0, numberSecondRe = 0, numberFirstIm = 0, numberSecondIm = 0;
-        String resultString = null;
-
-        if (TextUtils.isEmpty(inNumberFirstRe.getText().toString()) || TextUtils.isEmpty(inNumberSecondRe.getText().toString()) ||
-                TextUtils.isEmpty(inNumberFirstIm.getText().toString()) || TextUtils.isEmpty(inNumberSecondIm.getText().toString())) {
+        if (TextUtils.isEmpty(inputNumberFirstReal.getText().toString()) ||
+                TextUtils.isEmpty(inNumberSecondRe.getText().toString()) ||
+                TextUtils.isEmpty(inNumberFirstIm.getText().toString()) ||
+                TextUtils.isEmpty(inNumberSecondIm.getText().toString()))
             return;
-        }
-        numberFirstRe = Double.parseDouble(inNumberFirstRe.getText().toString());
+
+        String resultString = calculateResultString(view.getId());
+        
+        TextView resultView = (TextView) findViewById(R.id.textResult);
+
+        if (resultView != null)
+            resultView.setText(resultString);
+    }
+
+    private String calculateResultString(int viewID) {
+
+        double numberFirstRe, numberSecondRe, numberFirstIm, numberSecondIm;
+
+        numberFirstRe = Double.parseDouble(inputNumberFirstReal.getText().toString());
         numberFirstIm = Double.parseDouble(inNumberFirstIm.getText().toString());
         numberSecondRe = Double.parseDouble(inNumberSecondRe.getText().toString());
         numberSecondIm = Double.parseDouble(inNumberSecondIm.getText().toString());
 
-        Complex complex1 = new Complex(numberFirstRe, numberFirstIm);
-        Complex complex2 = new Complex(numberSecondRe, numberSecondIm);
+        Complex complexFirst = new Complex(numberFirstRe, numberFirstIm);
+        Complex complexSecond = new Complex(numberSecondRe, numberSecondIm);
 
+        //TODO remove this variable
+        String sign;
 
-        switch (view.getId()) {
+        String resultString = "";
+
+        switch (viewID) {
+
             case R.id.btnPlus:
                 sign = "+";
-                resultString = Complex.sum(complex1, complex2).toString();
+                resultString = Complex.sum(complexFirst, complexSecond).toString();
                 break;
             case R.id.btnMinus:
                 sign = "-";
-                resultString = Complex.minus(complex1, complex2).toString();
+                resultString = Complex.minus(complexFirst, complexSecond).toString();
                 break;
             case R.id.btnMult:
                 sign = "*";
-                resultString = Complex.multiplication(complex1, complex2).toString();
+                resultString = Complex.multiplication(complexFirst, complexSecond).toString();
                 break;
             case R.id.btnDiv:
                 if (numberSecondRe == 0.0 && numberSecondIm == 0) {
-                    Toast.makeText(this, "На ноль делить нельзя", Toast.LENGTH_SHORT).show();
+                    resultString = getString(R.string.division_by_zero_error);
                     break;
                 } else
                     sign = "/";
-                resultString = Complex.div(complex1, complex2).toString();
+                resultString = Complex.div(complexFirst, complexSecond).toString();
                 break;
             default:
                 break;
         }
-        if (view.getId() == R.id.btnDiv && numberSecondRe == 0.0 && numberSecondIm == 0.0) {
-            textResult.setText("error");
-        } else
-            textResult.setText(resultString);
+
+        return resultString;
     }
 }
 

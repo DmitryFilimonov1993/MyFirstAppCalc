@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="GenericInputEditText" parent="Widget.AppCompat.EditText">
+
+        <item name="android:maxLength">12</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:inputType">numberSigned|numberDecimal</item>
+    </style>
+
 </resources>

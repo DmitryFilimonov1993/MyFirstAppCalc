@@ -1,71 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/bcground">
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <LinearLayout
+        android:id="@+id/first_numbers_container"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1"
-        android:layout_marginLeft="5pt"
-        android:layout_marginRight="5pt"
-        android:layout_marginTop="15pt">
 
-        <EditText
-            android:id="@+id/numRe1"
-            android:layout_width="310dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="15dp">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/first_real_number_edit_text"
+
+            style="@style/GenericInputEditText"
+
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5pt"
-            android:layout_marginRight="5pt"
+
             android:layout_weight="1"
-            android:hint="first real number"
-            android:textStyle="italic"
-            android:inputType="numberSigned|numberDecimal"></EditText>
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
 
-        <EditText
-            android:id="@+id/numIm1"
-            android:layout_width="310dp"
+            android:hint="@string/first_real_number_note"/>
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/second_real_number_edit_text"
+
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+
+            android:layout_weight="1"
             android:layout_marginLeft="5pt"
             android:layout_marginRight="10pt"
-            android:layout_weight="1"
+
             android:hint="first imaginary"
             android:textStyle="italic"
-            android:inputType="numberSigned|numberDecimal"></EditText>
+            android:inputType="numberSigned|numberDecimal"/>
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/linearLayout2"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout2"
-        android:layout_marginLeft="5pt"
-        android:layout_marginRight="5pt"
-        android:layout_marginTop="3pt">
 
-        <EditText
+        android:layout_marginTop="3pt"
+        android:layout_marginLeft="5pt"
+        android:layout_marginRight="5pt">
+
+        <android.support.v7.widget.AppCompatEditText
             android:id="@+id/numRe2"
-            android:layout_width="310dp"
+
+            android:layout_width="@dimen/base_size_of_a_view"
             android:layout_height="wrap_content"
+
+            android:layout_weight="1"
             android:layout_marginLeft="5pt"
             android:layout_marginRight="5pt"
-            android:layout_weight="1"
-            android:hint="second real number"
-            android:textStyle="italic"
-            android:inputType="numberSigned|numberDecimal"></EditText>
 
-        <EditText
+            android:textStyle="italic"
+            android:hint="second real number"
+            android:inputType="numberSigned|numberDecimal"/>
+
+        <android.support.v7.widget.AppCompatEditText
             android:id="@+id/numIm2"
+
             android:layout_width="310dp"
             android:layout_height="wrap_content"
+
+            android:layout_weight="1"
             android:layout_marginLeft="5pt"
             android:layout_marginRight="10pt"
-            android:layout_weight="1"
+
             android:hint="second imaginary"
             android:textStyle="italic"
-            android:inputType="numberSigned|numberDecimal"></EditText>
+            android:inputType="numberSigned|numberDecimal"/>
     </LinearLayout>
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
