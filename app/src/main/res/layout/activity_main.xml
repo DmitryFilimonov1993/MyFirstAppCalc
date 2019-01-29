@@ -19,7 +19,7 @@
         <android.support.v7.widget.AppCompatEditText
             android:id="@+id/first_real_number_edit_text"
 
-            style="@style/GenericInputEditText"
+            styles="@style/GenericInputEditText"
 
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -31,112 +31,133 @@
             android:hint="@string/first_real_number_note"/>
 
         <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/second_real_number_edit_text"
+            android:id="@+id/first_image_number_edit_text"
+
+            styles="@style/GenericInputEditText"
 
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
             android:layout_weight="1"
-            android:layout_marginLeft="5pt"
-            android:layout_marginRight="10pt"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
 
-            android:hint="first imaginary"
-            android:textStyle="italic"
-            android:inputType="numberSigned|numberDecimal"/>
+            android:hint="@string/first_image_number_note"/>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/second_numbers_container"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="3pt"
-        android:layout_marginLeft="5pt"
-        android:layout_marginRight="5pt">
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="15dp">
 
         <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/numRe2"
+            android:id="@+id/second_real_number_edit_text"
 
-            android:layout_width="@dimen/base_size_of_a_view"
+            styles="@style/GenericInputEditText"
+
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
 
             android:layout_weight="1"
-            android:layout_marginLeft="5pt"
-            android:layout_marginRight="5pt"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
 
-            android:textStyle="italic"
-            android:hint="second real number"
-            android:inputType="numberSigned|numberDecimal"/>
+            android:hint="@string/second_real_number_note"/>
 
         <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/numIm2"
+            android:id="@+id/second_image_number_edit_text"
 
-            android:layout_width="310dp"
+            styles="@style/GenericInputEditText"
+
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
 
             android:layout_weight="1"
-            android:layout_marginLeft="5pt"
-            android:layout_marginRight="10pt"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
 
-            android:hint="second imaginary"
-            android:textStyle="italic"
-            android:inputType="numberSigned|numberDecimal"/>
+            android:hint="@string/second_image_number_note"/>
     </LinearLayout>
     
     <LinearLayout
+        android:id="@+id/button_container"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout3"
+
         android:layout_marginTop="50pt"
         android:layout_marginLeft="5pt"
         android:layout_marginRight="5pt">
-        <Button
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/buttonPlus"
+
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
+
             android:layout_weight="1"
+
             android:text="+"
-            android:textSize="14pt"
-            android:background="@drawable/button_primary_selector"
-            android:id="@+id/btnPlus">
-        </Button>
-        <Button
+            android:textSize="14dp"
+
+            android:background="@drawable/button_primary_selector"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/buttonMinus"
+
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
+
             android:layout_weight="1"
+
             android:text="-"
-            android:textSize="14pt"
-            android:background="@drawable/button_primary_selector"
-            android:id="@+id/btnMinus">
-        </Button>
-        <Button
+            android:textSize="14dp"
+
+            android:background="@drawable/button_primary_selector"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/buttonMultiplication"
+
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
+
             android:layout_weight="1"
+
             android:text="×"
-            android:textSize="14pt"
-            android:background="@drawable/button_primary_selector"
-            android:id="@+id/btnMult">
-        </Button>
-        <Button
+            android:textSize="14dp"
+
+            android:background="@drawable/button_primary_selector"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/buttonDivision"
+
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
+
             android:layout_weight="1"
+
             android:text="÷"
-            android:textSize="14pt"
-            android:background="@drawable/button_primary_selector"
-            android:id="@+id/btnDiv">
-        </Button>
+            android:textSize="14dp"
+
+            android:background="@drawable/button_primary_selector"/>
     </LinearLayout>
-    <TextView
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/textResult"
+
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_marginLeft="5pt"
-        android:layout_marginRight="5pt"
-        android:textSize="14pt"
-        android:textStyle="italic"
-        android:layout_marginTop="15pt"
-        android:id="@+id/textResult"
-        android:gravity="center_horizontal">
-    </TextView>
+
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="15dp"
+
+        style="@style/GenericOutputTextView"
+
+        android:gravity="center_horizontal"/>
 </LinearLayout>

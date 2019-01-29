@@ -15,4 +15,12 @@
         <item name="android:inputType">numberSigned|numberDecimal</item>
     </style>
 
+    <style name="GenericOutputTextView" parent="Widget.AppCompat.TextView.SpinnerItem">
+
+        <item name="android:maxLength">12</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+
+
 </resources>

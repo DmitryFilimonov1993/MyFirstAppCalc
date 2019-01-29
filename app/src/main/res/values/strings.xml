@@ -1,7 +1,13 @@
 <resources>
 
     <string name="app_name">ComplexNumCalc</string>
+
     <string name="first_real_number_note">first real number</string>
+    <string name="second_real_number_note">second real number</string>
+
+    <string name="first_image_number_note">first image number</string>
+    <string name="second_image_number_note">second image number</string>
+
     <string name="division_by_zero_error">Error! Division by zero is impossible</string>
 
 </resources>
