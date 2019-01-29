@@ -11,16 +11,15 @@
     <style name="GenericInputEditText" parent="Widget.AppCompat.EditText">
 
         <item name="android:maxLength">12</item>
-        <item name="android:textStyle">italic</item>
+        <item name="android:fontFamily">@font/sourcesanssro_semibold</item>
         <item name="android:inputType">numberSigned|numberDecimal</item>
     </style>
 
     <style name="GenericOutputTextView" parent="Widget.AppCompat.TextView.SpinnerItem">
 
+        <item name="android:fontFamily">@font/sourcesanssro_semibold</item>
         <item name="android:maxLength">12</item>
-        <item name="android:textStyle">italic</item>
     </style>
-
 
 
 </resources>
