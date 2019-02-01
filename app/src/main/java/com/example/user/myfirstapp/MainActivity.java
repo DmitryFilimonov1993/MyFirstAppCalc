@@ -1,6 +1,5 @@
 package com.example.user.myfirstapp;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -43,20 +42,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent;
+
         switch (item.getItemId()) {
 
             case 1:
-                intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
+                IntentsHelper.startNewActivity(this, MainActivity.class);
                 break;
             case 2:
-                intent = new Intent(this, expNotationActivity.class);
-                startActivity(intent);
+                IntentsHelper.startNewActivity(this, expNotationActivity.class);
                 break;
             case 3:
-                intent = new Intent(this, ConverterActivity.class);
-                startActivity(intent);
+                IntentsHelper.startNewActivity(this, ConverterActivity.class);
                 break;
             case 4:
                 finish();
@@ -76,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
 
         String resultString = calculateResultString(view.getId());
-        
+
         TextView resultView = (TextView) findViewById(R.id.textResult);
 
         if (resultView != null)
