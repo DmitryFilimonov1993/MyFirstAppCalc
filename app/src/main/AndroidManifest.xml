@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".com.example.user.myfirstapp.MainActivity">
+        <activity android:name=".ui.MainActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
             
         </activity>
 
-        <activity android:name=".com.example.user.myfirstapp.ConverterActivity">
+        <activity android:name=".ui.ConverterActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +30,7 @@
 
         </activity>
 
-        <activity android:name=".com.example.user.myfirstapp.expNotationActivity">
+        <activity android:name=".ui.ExpNotationActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
