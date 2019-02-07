@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.user.myfirstapp.R;
+import com.example.user.myfirstapp.helpers.IntentsHelper;
 
 public class ConverterActivity extends AppCompatActivity {
 
@@ -27,21 +28,18 @@ public class ConverterActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    public boolean onOptionsItemSelected(MenuItem item){
-        Intent intent;
-        switch (item.getItemId()){
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
 
             case 1:
-                intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
+                IntentsHelper.startNewActivity(this, MainActivity.class);
                 break;
             case 2:
-                intent = new Intent(this, expNotationActivity.class);
-                startActivity(intent);
+                IntentsHelper.startNewActivity(this, ExpNotationActivity.class);
                 break;
             case 3:
-                intent = new Intent(this, ConverterActivity.class);
-                startActivity(intent);
+                IntentsHelper.startNewActivity(this, ConverterActivity.class);
                 break;
             case 4:
                 finish();

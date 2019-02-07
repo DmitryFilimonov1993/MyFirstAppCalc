@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 IntentsHelper.startNewActivity(this, MainActivity.class);
                 break;
             case 2:
-                IntentsHelper.startNewActivity(this, expNotationActivity.class);
+                IntentsHelper.startNewActivity(this, ExpNotationActivity.class);
                 break;
             case 3:
                 IntentsHelper.startNewActivity(this, ConverterActivity.class);
