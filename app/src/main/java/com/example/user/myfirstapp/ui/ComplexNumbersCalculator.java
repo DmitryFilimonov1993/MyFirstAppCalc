@@ -35,15 +35,9 @@ public class ComplexNumbersCalculator {
         scaleImageNumber = new BigDecimal(imageNumber).setScale(3,BigDecimal.ROUND_HALF_UP).doubleValue();
 
         String string;
-        if (imageNumber == 1 || imageNumber == -1) {
-            if (realNumber == 0) {
-                string = sign() + "i";
-            } else {
-                string = Double.toString(scaleRealNumber) + sign() + " i ";
-            }
-        } else {
-            string = Double.toString(scaleRealNumber) + sign() + Double.toString(Math.abs(scaleImageNumber)) + " i ";
-        }
+        string = (imageNumber == 1 || imageNumber == -1)?((realNumber == 0)? sign() + "i" :
+                (Double.toString(scaleRealNumber) + sign() + " i ")):
+                (Double.toString(scaleRealNumber) + sign() + Double.toString(Math.abs(scaleImageNumber)) + " i ");
         return string;
             }
 
