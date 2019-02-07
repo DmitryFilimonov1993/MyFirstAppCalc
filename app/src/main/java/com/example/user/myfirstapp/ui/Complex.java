@@ -1,4 +1,4 @@
-package com.example.user.myfirstapp;
+package com.example.user.myfirstapp.ui;
 
 import java.math.BigDecimal;
 

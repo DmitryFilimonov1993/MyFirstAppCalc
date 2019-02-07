@@ -1,10 +1,13 @@
-package com.example.user.myfirstapp;
+package com.example.user.myfirstapp.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.*;
 import android.widget.*;
+
+import com.example.user.myfirstapp.R;
+import com.example.user.myfirstapp.helpers.IntentsHelper;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
