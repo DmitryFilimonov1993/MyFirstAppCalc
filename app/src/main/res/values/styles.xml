@@ -18,7 +18,6 @@
     <style name="GenericOutputTextView" parent="TextAppearance.AppCompat">
 
         <item name="android:fontFamily">@font/sourcesanspro_semibold</item>
-        <item name="android:maxLength">12</item>
     </style>
 
 
