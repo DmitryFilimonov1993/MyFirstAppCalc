@@ -91,8 +91,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         numberSecondRe = Double.parseDouble(inputNumberSecondReal.getText().toString());
         numberSecondIm = Double.parseDouble(inputNumberSecondImage.getText().toString());
 
-        Complex complexFirst = new Complex(numberFirstRe, numberFirstIm);
-        Complex complexSecond = new Complex(numberSecondRe, numberSecondIm);
+        ComplexNumbersCalculator complexFirst = new ComplexNumbersCalculator(numberFirstRe, numberFirstIm);
+        ComplexNumbersCalculator complexSecond = new ComplexNumbersCalculator(numberSecondRe, numberSecondIm);
 
         String resultString = "";
 
@@ -100,17 +100,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.buttonPlus:
 
-                resultString = Complex.sum(complexFirst, complexSecond).toString();
+                resultString = ComplexNumbersCalculator.sum(complexFirst, complexSecond).toString();
                 break;
 
             case R.id.buttonMinus:
 
-                resultString = Complex.minus(complexFirst, complexSecond).toString();
+                resultString = ComplexNumbersCalculator.minus(complexFirst, complexSecond).toString();
                 break;
 
             case R.id.buttonMultiplication:
 
-                resultString = Complex.multiplication(complexFirst, complexSecond).toString();
+                resultString = ComplexNumbersCalculator.multiplication(complexFirst, complexSecond).toString();
                 break;
 
             case R.id.buttonDivision:
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
                 } else
 
-                resultString = Complex.div(complexFirst, complexSecond).toString();
+                resultString = ComplexNumbersCalculator.div(complexFirst, complexSecond).toString();
                 break;
 
             default:
